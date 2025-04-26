@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="forgot_password">Forgot Password</string>
+    <string name="enter_email">Enter Email</string>
+    <string name="enter_code_verf">Enter Code Verf</string>
+    <string name="verify">Verify</string>
+    <string name="enter_new_password">Enter new Password</string>
+    <string name="enter_pass">Enter Pass</string>
+    <string name="confirm_pass">Confirm Pass</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="sing_up">Sing Up</string>
+    <string name="already_have_account">Already have account?</string>
+    <string name="login">Login</string>
+    <string name="remember_me">Remember me!</string>
+    <string name="forgot">Forgot Password?</string>
+    <string name="don_t_have_acc">Don’t have acc?</string>
+    <string name="don_t_have_an_account_yet">Don\'t have an account yet?</string>
+    <string name="cart">Cart</string>
+    <string name="search">Search</string>
+    <string name="favorites">favorites</string>
+    <string name="home">Home</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="back_to">Back to</string>
+    <string name="if_you_didn_t_receive_a_code">If you didn’t receive a code,</string>
+    <string name="send">Send</string>
+    <string name="enter_verification_code">Enter Verification Code</string>
+    <string name="resend">Resend</string>
+    <string name="todo">TODO</string>
+</resources>

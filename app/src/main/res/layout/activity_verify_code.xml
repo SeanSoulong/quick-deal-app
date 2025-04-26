@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".VerifyCode">
+
+
+    <ImageView
+        android:id="@+id/logo_forgetPass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="60dp"
+        android:contentDescription="@string/todo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo_forgetpass" />
+
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:fontFamily="@font/open_sans"
+        android:text="@string/enter_verification_code"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logo_forgetPass" />
+
+    <EditText
+        android:id="@+id/entercode"
+        android:layout_width="362dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginEnd="32dp"
+        android:autofillHints=""
+        android:background="@drawable/background_email"
+        android:fontFamily="@font/open_sans_semibold"
+        android:hint="@string/enter_code_verf"
+        android:maxLength="4"
+        android:maxLines="1"
+        android:padding="20dp"
+        android:inputType="number"
+        android:textColorHint="#666"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.62"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+
+    <TextView
+        android:id="@+id/have_acc_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="91dp"
+        android:layout_marginTop="25dp"
+        android:fontFamily="@font/open_sans_medium"
+        android:text="@string/if_you_didn_t_receive_a_code"
+        android:textColor="#ABA5A5"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/entercode" />
+
+    <TextView
+        android:id="@+id/resend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:fontFamily="@font/open_sans_medium"
+        android:text="@string/resend"
+        android:textColor="#000"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/have_acc_login"
+        app:layout_constraintTop_toTopOf="@+id/have_acc_login" />
+
+
+    <Button
+        android:id="@+id/btn_verify"
+        android:layout_width="362dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="43dp"
+        android:layout_marginTop="40dp"
+        android:backgroundTint="#6C63FF"
+        android:fontFamily="@font/open_sans_semibold"
+        android:text="@string/send"
+        app:cornerRadius="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/have_acc_login" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
