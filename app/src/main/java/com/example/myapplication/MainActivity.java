@@ -1,14 +1,8 @@
 package com.example.myapplication;
-
 import android.os.Bundle;
-
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 import androidx.fragment.app.Fragment;
-
 import com.example.myapplication.databinding.ActivityMainBinding;
 import com.example.myapplication.fragment.CartFragment;
 import com.example.myapplication.fragment.FavoriteFragment;
@@ -16,7 +10,8 @@ import com.example.myapplication.fragment.HomeFragment;
 import com.example.myapplication.fragment.SearchFragment;
 
 public class MainActivity extends AppCompatActivity {
-    private ActivityMainBinding binding;
+
+    public static ActivityMainBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

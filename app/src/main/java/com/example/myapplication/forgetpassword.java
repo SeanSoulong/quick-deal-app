@@ -14,7 +14,7 @@ public class forgetpassword extends AppCompatActivity {
         EdgeToEdge.enable(this);
         binding = ActivityForgetpasswordBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        binding.btnVerify.setOnClickListener(v -> verify());
+
         binding.haveAccLogin.setOnClickListener(v -> login());
 
 
@@ -25,10 +25,7 @@ public class forgetpassword extends AppCompatActivity {
         startActivity(intent);
     }
 
-    private void verify() {
-        Intent intent = new Intent(this, VerifyCode.class);
-        startActivity(intent);
-    }
+
 
 
 }
