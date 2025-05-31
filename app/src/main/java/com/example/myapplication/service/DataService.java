@@ -43,10 +43,14 @@ public class DataService {
         List<ClaimItem> claims = new ArrayList<>();
         claims.add(new ClaimItem(R.drawable.card_clim, "Food Discount", "50% OFF"));
         claims.add(new ClaimItem(R.drawable.card_clim, "Fashion Discount", "30% OFF"));
+        claims.add(new ClaimItem(R.drawable.card_clim, "Food Discount", "50% OFF"));
+        claims.add(new ClaimItem(R.drawable.card_clim, "Fashion Discount", "30% OFF"));
         return claims;
     }
     public List<ClaimItem2> getClaimItem2List() {
         List<ClaimItem2> claims = new ArrayList<>();
+        claims.add(new ClaimItem2(R.drawable.card_clim2, "Related Product 1", "20%"));
+        claims.add(new ClaimItem2(R.drawable.card_clim2, "Related Product 2", "30%"));
         claims.add(new ClaimItem2(R.drawable.card_clim2, "Related Product 1", "20%"));
         claims.add(new ClaimItem2(R.drawable.card_clim2, "Related Product 2", "30%"));
         return claims;

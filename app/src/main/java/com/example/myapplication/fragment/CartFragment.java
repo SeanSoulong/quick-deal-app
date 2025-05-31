@@ -48,6 +48,8 @@ public class CartFragment extends Fragment {
         cartList.add(new Cart("Latest Smartphone", "$699.99", "Discount 10%", R.drawable.phone_image));
         cartList.add(new Cart("Men's Workout Shoes", "$89.99", "Discount 15%", R.drawable.nike_image));
         cartList.add(new Cart("Pepperoni Pizza", "$12.99", "Discount 20%", R.drawable.pizza_image));
+        cartList.add(new Cart("Men's Workout Shoes", "$89.99", "Discount 15%", R.drawable.nike_image));
+        cartList.add(new Cart("Pepperoni Pizza", "$12.99", "Discount 20%", R.drawable.pizza_image));
 
 
         CartAdapter adapter = new CartAdapter(getContext(), cartList);

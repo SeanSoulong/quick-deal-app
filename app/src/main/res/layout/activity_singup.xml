@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
+    android:background="@color/white"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".singup">
@@ -12,9 +13,9 @@
         android:id="@+id/imageView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="108dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="30dp"
         android:contentDescription="@string/todo"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logo_singup" />
@@ -34,12 +35,26 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
     <EditText
-        android:id="@+id/email_singup"
-        android:layout_width="362dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="25dp"
+        android:id="@+id/fullnameSingup"
+        android:layout_width="327dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="52dp"
-        android:layout_marginEnd="32dp"
+        android:autofillHints=""
+        android:background="@drawable/background_email"
+        android:fontFamily="@font/open_sans_semibold"
+        android:hint="@string/enter_name"
+        android:inputType="textEmailAddress"
+        android:padding="20dp"
+        android:textColorHint="#666"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <EditText
+        android:id="@+id/email_singup"
+        android:layout_width="327dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="29dp"
         android:autofillHints=""
         android:background="@drawable/background_email"
         android:fontFamily="@font/open_sans_semibold"
@@ -48,17 +63,14 @@
         android:padding="20dp"
         android:textColorHint="#666"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.62"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/fullnameSingup" />
 
     <EditText
         android:id="@+id/password_singup"
-        android:layout_width="362dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="25dp"
+        android:layout_width="327dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="29dp"
-        android:layout_marginEnd="32dp"
         android:autofillHints=""
         android:background="@drawable/background_email"
         android:fontFamily="@font/open_sans_semibold"
@@ -67,17 +79,14 @@
         android:padding="20dp"
         android:textColorHint="#666"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.62"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/email_singup" />
 
     <EditText
         android:id="@+id/cpassword_singup"
-        android:layout_width="362dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="25dp"
+        android:layout_width="327dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="29dp"
-        android:layout_marginEnd="32dp"
         android:autofillHints=""
         android:background="@drawable/background_email"
         android:fontFamily="@font/open_sans_semibold"
@@ -86,49 +95,54 @@
         android:padding="20dp"
         android:textColorHint="#666"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.62"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/password_singup" />
 
     <Button
         android:id="@+id/button_singup"
-        android:layout_width="362dp"
+        android:layout_width="327dp"
         android:layout_height="60dp"
-        android:layout_marginStart="40dp"
         android:layout_marginTop="60dp"
         android:backgroundTint="#6C63FF"
         android:fontFamily="@font/open_sans_semibold"
         android:text="@string/sing_up"
         app:cornerRadius="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cpassword_singup" />
 
-    <TextView
-        android:id="@+id/have_acc_login"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="108dp"
         android:layout_marginTop="32dp"
-        android:fontFamily="@font/open_sans_medium"
-        android:text="@string/already_have_account"
-        android:textColor="#ABA5A5"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_singup" />
-
-    <TextView
-        android:id="@+id/have_acc"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:layout_marginEnd="125dp"
-        android:fontFamily="@font/open_sans_medium"
-        android:text="@string/login"
-        android:textColor="#000"
-        android:textSize="16sp"
+        android:gravity="center"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/have_acc_login"
-        app:layout_constraintTop_toTopOf="@+id/have_acc_login" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_singup">
+
+        <TextView
+            android:id="@+id/have_acc_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/open_sans_medium"
+            android:text="@string/already_have_account"
+            android:textColor="#ABA5A5"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/have_acc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:fontFamily="@font/open_sans_medium"
+            android:text="@string/login"
+            android:textColor="#000"
+            android:textSize="13sp" />
+
+    </LinearLayout>
+
+
 
     <ProgressBar
         android:id="@+id/pb_login_progress"

@@ -136,4 +136,6 @@
     <string name="products_in_your_cart">Products in Your Cart</string>
     <string name="discount">Discount</string>
     <string name="total">Total</string>
+    <string name="enter_name">Enter Name</string>
+    <string name="name">Name</string>
 </resources>

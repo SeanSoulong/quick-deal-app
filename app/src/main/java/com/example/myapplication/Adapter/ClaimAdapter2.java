@@ -10,7 +10,6 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplication.R;
-import com.example.myapplication.model.ClaimItem;
 import com.example.myapplication.model.ClaimItem2;
 
 import java.util.List;

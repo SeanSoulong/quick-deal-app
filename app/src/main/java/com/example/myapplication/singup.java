@@ -14,6 +14,8 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
 
 public class singup extends AppCompatActivity {
     private ActivitySingupBinding binding;
@@ -36,14 +38,12 @@ public class singup extends AppCompatActivity {
     }
 
     private void onSignUpClicked() {
-
+        String fullName = binding.fullnameSingup.getText().toString().trim();
         String email = binding.emailSingup.getText().toString().trim();
         String password = binding.passwordSingup.getText().toString().trim();
         String confirmPassword = binding.cpasswordSingup.getText().toString().trim();
 
-
-        // Validate Input Fields
-        if (email.isEmpty() || password.isEmpty() || confirmPassword.isEmpty()) {
+        if (fullName.isEmpty() || email.isEmpty() || password.isEmpty() || confirmPassword.isEmpty()) {
             Toast.makeText(this, "Please fill all fields!", Toast.LENGTH_SHORT).show();
             return;
         }
@@ -62,26 +62,35 @@ public class singup extends AppCompatActivity {
             Toast.makeText(this, "Confirm password doesn't match!", Toast.LENGTH_SHORT).show();
             return;
         }
+
         binding.pbLoginProgress.setVisibility(View.VISIBLE);
+
         mAuth.createUserWithEmailAndPassword(email, password)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        binding.pbLoginProgress.setVisibility(View.INVISIBLE);
-                        if (task.isSuccessful()) {
-                            Toast.makeText(singup.this, "Registration successful!", Toast.LENGTH_SHORT).show();
-                            Intent loginIntent = new Intent(singup.this, welcome.class);
-                            loginIntent.putExtra("email", email);
-                            startActivity(loginIntent);
-                            finish();
-                        } else {
-                            Toast.makeText(singup.this, "Registration failed: " + task.getException().getMessage(),
-                                    Toast.LENGTH_SHORT).show();
+                .addOnCompleteListener(this, task -> {
+                    binding.pbLoginProgress.setVisibility(View.INVISIBLE);
+                    if (task.isSuccessful()) {
+                        // Set display name
+                        FirebaseUser user = mAuth.getCurrentUser();
+                        if (user != null) {
+                            UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
+                                    .setDisplayName(fullName)
+                                    .build();
+                            user.updateProfile(profileUpdates).addOnCompleteListener(updateTask -> {
+                                if (updateTask.isSuccessful()) {
+                                    Toast.makeText(this, "Registration successful!", Toast.LENGTH_SHORT).show();
+                                    Intent intent = new Intent(this, welcome.class);
+                                    startActivity(intent);
+                                    finish();
+                                }
+                            });
                         }
+                    } else {
+                        Toast.makeText(this, "Registration failed: " + task.getException().getMessage(),
+                                Toast.LENGTH_SHORT).show();
                     }
                 });
-
     }
+
     private void welcomscreen() {
         Intent intent = new Intent(this, welcome.class);
         startActivity(intent);

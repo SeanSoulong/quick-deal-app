@@ -13,9 +13,6 @@
         android:theme="@style/Theme.MyApplication"
         tools:targetApi="31">
         <activity
-            android:name=".Detail"
-            android:exported="false" />
-        <activity
             android:name=".Splashscreen"
             android:exported="true">
             <intent-filter>
@@ -25,13 +22,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".VerifyCode"
-            android:exported="false" />
-        <activity
             android:name=".MainActivity"
-            android:exported="false" />
-        <activity
-            android:name=".newpasswrod"
             android:exported="false" />
         <activity
             android:name=".forgetpassword"

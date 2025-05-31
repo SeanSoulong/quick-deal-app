@@ -13,14 +13,13 @@
 
         <LinearLayout
             android:id="@+id/linearLayoutTop"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="33dp"
-            android:layout_marginTop="88dp"
-            android:gravity="center_vertical"
+            android:layout_marginTop="63dp"
+            android:gravity="center"
             android:orientation="horizontal"
-            android:paddingTop="9dp"
-            android:paddingBottom="9dp"
+            android:padding="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
@@ -33,34 +32,43 @@
                 android:textColor="@color/black"
                 android:textSize="17sp" />
 
-            <ImageView
-                android:id="@+id/notification"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:layout_marginStart="195dp"
-                android:contentDescription="@string/todo"
-                android:src="@drawable/notification" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="150dp"
+                android:gravity="center"
+                android:orientation="horizontal">
 
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/imageView5"
-                android:layout_width="42dp"
-                android:layout_marginStart="5dp"
-                android:layout_height="42dp"
-                android:src="@drawable/user_profile"
-                app:shapeAppearanceOverlay="@style/CircleImageView" />
+                <ImageView
+                    android:id="@+id/notification"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:contentDescription="@string/todo"
+                    android:src="@drawable/notification" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/imageView5"
+                    android:layout_width="42dp"
+                    android:layout_height="42dp"
+                    android:layout_marginStart="5dp"
+                    android:src="@drawable/guest"
+                    app:shapeAppearanceOverlay="@style/CircleImageView" />
+            </LinearLayout>
+
+
         </LinearLayout>
 
 
         <LinearLayout
             android:id="@+id/linearLayoutSearch"
-            android:layout_width="wrap_content"
+            android:layout_width="360dp"
             android:layout_height="36dp"
-            android:layout_marginStart="43dp"
             android:layout_marginTop="23dp"
             android:background="@drawable/rounded_border"
             android:gravity="center_vertical"
             android:padding="4dp"
             android:paddingStart="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/linearLayoutTop"
             tools:ignore="RtlSymmetry">
@@ -91,7 +99,6 @@
             android:layout_marginTop="25dp"
             android:gravity="center"
             android:orientation="vertical"
-
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/linearLayoutSearch"
@@ -136,9 +143,10 @@
 
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="327dp"
+                    android:layout_gravity="center"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="50dp"
+
                     android:orientation="vertical">
 
                     <TextView
@@ -196,9 +204,9 @@
                 </LinearLayout>
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="327dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="50dp"
+                    android:layout_gravity="center"
                     android:text="@string/select_a_category"
                     android:textSize="12sp"
                     android:layout_marginTop="4dp"
@@ -206,9 +214,9 @@
                     android:textColor="#80000000"/>
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="327dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="50dp"
+                    android:layout_gravity="center"
                     android:layout_marginTop="12dp"
                     android:orientation="vertical">
 
@@ -257,9 +265,9 @@
 
                 </LinearLayout>
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="327dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="50dp"
+                   android:layout_gravity="center"
                     android:text="@string/select_a_category"
                     android:textSize="12sp"
                     android:layout_marginTop="4dp"
@@ -269,26 +277,26 @@
 
                 <TextView
                     android:layout_marginTop="28dp"
-                    android:layout_width="wrap_content"
+                    android:layout_width="327dp"
                     android:layout_height="wrap_content"
                     android:text="@string/discounted_businesses"
-                    android:layout_marginStart="50dp"
+                    android:layout_gravity="center"
                     android:textColor="@color/black"
                     android:textStyle="bold"
                     android:textSize="18sp"/>
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recyclerView"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="42dp"
+                    android:layout_gravity="center"
                     android:overScrollMode="never"
                     android:layout_marginTop="8dp"/>
 
                 <LinearLayout
-                    android:layout_width="340dp"
+                    android:layout_width="327dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="50dp"
+                    android:layout_gravity="center"
                     android:layout_marginTop="12dp"
                     android:background="@drawable/bg_btn"
                     android:gravity="center">
@@ -304,32 +312,29 @@
                 </LinearLayout>
 
                 <ImageView
-                    android:layout_width="wrap_content"
+                    android:layout_width="327dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="52dp"
+                   android:layout_gravity="center"
                     android:contentDescription="@string/todo"
                     android:layout_marginTop="12dp"
                     android:src="@drawable/map_image"/>
 
                 <TextView
                     android:layout_marginTop="26dp"
-                    android:layout_width="wrap_content"
+                    android:layout_width="327dp"
                     android:layout_height="wrap_content"
                     android:text="@string/customer_reviews"
-                    android:layout_marginStart="60dp"
+                    android:layout_gravity="center"
                     android:textColor="@color/black"
                     android:textStyle="bold"
                     android:textSize="18sp"/>
 
-
-
-
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recyclerReviews"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="42dp"
                     android:layout_marginTop="8dp"
+                    android:layout_marginStart="30dp"
                     android:orientation="horizontal"
                     android:overScrollMode="never"
                     android:scrollbars="none"
@@ -339,23 +344,23 @@
 
                 <TextView
                     android:layout_marginTop="26dp"
-                    android:layout_width="wrap_content"
+                    android:layout_width="327dp"
                     android:layout_height="wrap_content"
                     android:text="@string/more_discounts"
-                    android:layout_marginStart="60dp"
+                    android:layout_gravity="center"
                     android:textColor="@color/black"
                     android:textStyle="bold"
                     android:textSize="18sp"/>
 
 
                 <LinearLayout
-                    android:layout_width="340dp"
+                    android:layout_width="327dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="26dp"
                     android:paddingBottom="12dp"
                     android:paddingTop="12dp"
+                    android:layout_gravity="center"
                     android:gravity="center"
-                    android:layout_marginStart="60dp"
                     android:orientation="horizontal">
 
 
@@ -366,7 +371,7 @@
                         android:src="@drawable/icon_search"
                         android:layout_marginEnd="8dp"/>
                     <LinearLayout
-                        android:layout_width="202dp"
+                        android:layout_width="180dp"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="8dp"
                         android:orientation="vertical">
@@ -402,18 +407,18 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="60dp"
+                 android:layout_gravity="center"
                     android:contentDescription="@string/todo"
                     android:src="@drawable/vector"/>
 
 
                 <LinearLayout
-                    android:layout_width="340dp"
+                    android:layout_width="327dp"
                     android:layout_height="wrap_content"
                     android:paddingBottom="12dp"
                     android:paddingTop="12dp"
                     android:gravity="center"
-                    android:layout_marginStart="60dp"
+                  android:layout_gravity="center"
                     android:orientation="horizontal">
 
 
@@ -424,7 +429,7 @@
                         android:src="@drawable/icon_search1"
                         android:layout_marginEnd="8dp"/>
                     <LinearLayout
-                        android:layout_width="202dp"
+                        android:layout_width="180dp"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="10dp"
                         android:orientation="vertical">
@@ -458,14 +463,14 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="60dp"
+                  android:layout_gravity="center"
                     android:contentDescription="@string/todo"
                     android:src="@drawable/vector"/>
 
                 <LinearLayout
-                    android:layout_width="340dp"
+                    android:layout_width="327dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="60dp"
+                   android:layout_gravity="center"
                     android:layout_marginTop="12dp"
                     android:layout_marginBottom="50dp"
                     android:background="@drawable/bg_btn"

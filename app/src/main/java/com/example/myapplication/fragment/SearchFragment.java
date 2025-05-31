@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -17,6 +18,8 @@ import com.example.myapplication.R;
 import com.example.myapplication.model.ReviewItem;
 import com.example.myapplication.model.VerifiedItem;
 import com.example.myapplication.service.DataService;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import java.util.List;
 
@@ -30,6 +33,15 @@ public class SearchFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_search, container, false);
+
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        TextView usernameText = view.findViewById(R.id.usernam);
+
+        if (user != null && user.getDisplayName() != null) {
+            usernameText.setText("Hello, " + user.getDisplayName());
+        } else {
+            usernameText.setText("Hello, Guest");
+        }
 
         ImageView imageView5 = view.findViewById(R.id.imageView5);
         imageView5.setOnClickListener(v -> {

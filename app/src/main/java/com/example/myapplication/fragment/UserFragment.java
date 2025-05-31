@@ -15,6 +15,7 @@ import com.example.myapplication.R;
 import com.example.myapplication.databinding.FragmentUserBinding;
 import com.example.myapplication.welcome;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class UserFragment extends Fragment {
     FragmentUserBinding binding;
@@ -32,6 +33,14 @@ public class UserFragment extends Fragment {
 
         mAuth = FirebaseAuth.getInstance();
 
+        // ✅ Set user name
+        FirebaseUser user = mAuth.getCurrentUser();
+        if (user != null && user.getDisplayName() != null) {
+            binding.fullname.setText(user.getDisplayName());
+        } else {
+            binding.fullname.setText("Guest");
+        }
+
         ImageView imageView5 = view.findViewById(R.id.backtohome);
         imageView5.setOnClickListener(v -> {
             FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
@@ -41,15 +50,13 @@ public class UserFragment extends Fragment {
         });
 
         ImageView iconlogout = view.findViewById(R.id.iconlogout);
-
         iconlogout.setOnClickListener(v -> {
             mAuth.signOut();
             startActivity(new Intent(getActivity(), welcome.class));
             getActivity().finish();
-
         });
 
-
-        return view; // ✅ Missing return fixed here
+        return view;
     }
+
 }

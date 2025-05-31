@@ -22,9 +22,11 @@ import com.example.myapplication.R;
 import com.example.myapplication.databinding.FragmentHomeBinding;
 import com.example.myapplication.model.CardItem;
 import com.example.myapplication.model.ClaimItem;
+import com.example.myapplication.model.FavoriteViewModel;
 import com.example.myapplication.model.Product;
 import com.example.myapplication.service.DataService;
-import com.example.myapplication.model.FavoriteViewModel; // ✅ Correct import
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import java.util.List;
 
@@ -49,6 +51,15 @@ public class HomeFragment extends Fragment {
 
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View view = binding.getRoot();
+
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        TextView usernameText = view.findViewById(R.id.usernam);
+
+        if (user != null && user.getDisplayName() != null) {
+            usernameText.setText("Hello, " + user.getDisplayName());
+        } else {
+            usernameText.setText("Hello, Guest");
+        }
 
         // Initialize DataService and Product List
         dataService = new DataService();
